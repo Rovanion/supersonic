@@ -220,6 +220,7 @@ public class PodcastService {
     		// If there was an error loading an episode, remove it.
     		catch (Exception e) {
     			podcastDao.deleteEpisode(episode.getId());
+			LOG.info("Deleted Podcast episode '" + episode.getTitle() + "' because:" e.getMessage());
     		}
     	}
     }
